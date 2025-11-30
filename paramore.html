@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramore Fan Page</title>
+    <link rel="stylesheet" href="bands.css">
+    <style>
+        .album-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .album {
+            width: 200px;
+            height: auto;
+            background-color: #1f1f2e;
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .album img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .album:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+        }
+
+        .album h3 {
+            font-size: 1rem;
+            color: #dcdcff;
+            margin-bottom: 5px;
+        }
+
+        .album p a {
+            color: #8b82ff;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .album p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="photos/logo.jpg" alt="Paramore Logo">
+        <h1>Music Universe: Paramore</h1>
+    </div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="#members">Members</a>
+    <a href="#albums">Albums</a>
+    <a href="#media">Media & Gallery</a>
+    <a href="#events">Tours & Events</a>
+</nav>
+</header>
+
+<section class="hero">
+    <img src="photos/paramore Group Photo.png" alt="Paramore Group Photo" class="hero-img">
+    <h2>Paramore</h2>
+    <p>Pop-punk & alternative rock icons known for powerful vocals and emotional lyrics.</p>
+</section>
+
+<main>
+<section class="genre" id="members">
+    <h2>Band Members</h2>
+    <div class="card-container">
+         <div class="artist-card">
+            <img src="photos/paramore Hayley Williams.png" alt="Hayley Williams">
+            <h3>Hayley Williams</h3>
+            <button class="accordion">More Info</button>
+            <div class="panel">
+                <p><strong>Lead Vocals</strong></p>
+                <p>Birth: December 27, 1988</p>
+                <p>Powerful vocalist, songwriter, and the face of Paramore since their formation.</p>
+                <p><a href="https://www.youtube.com/watch?v=A63VwWz1ij0" target="_blank">Misery Business (Live)</a></p>
+            </div>
+        </div>
+
+         <div class="artist-card">
+            <img src="photos/paramore Taylor York.png" alt="Taylor York">
+            <h3>Taylor York</h3>
+            <button class="accordion">More Info</button>
+            <div class="panel">
+                <p><strong>Guitar</strong></p>
+                <p>Birth: December 17, 1989</p>
+                <p>Key creative force behind Paramore’s modern sound.</p>
+                <p><a href="https://www.youtube.com/watch?v=OblL026SvD4" target="_blank">Ain’t It Fun (Live)</a></p>
+            </div>
+        </div>
+
+         <div class="artist-card">
+            <img src="photos/paramore Zac Farro.png" alt="Zac Farro">
+            <h3>Zac Farro</h3>
+            <button class="accordion">More Info</button>
+            <div class="panel">
+                <p><strong>Drums</strong></p>
+                <p>Birth: June 4, 1990</p>
+                <p>Original drummer known for dynamic, energetic performances.</p>
+                <p><a href="https://www.youtube.com/watch?v=s48sEUuMfgM" target="_blank">Hard Times (Live)</a></p>
+            </div>
+        </div>
+     </div>
+</section>
+
+<section class="genre" id="albums">
+    <h2>Albums & Songs</h2>
+    <div class="album-grid">
+         <div class="album">
+            <img src="photos/paramore Riot Album.png" alt="Riot Album">
+            <h3>Riot! (2007)</h3>
+            <p><a href="https://www.youtube.com/watch?v=A63VwWz1ij0" target="_blank">Misery Business</a></p>
+            <p><a href="https://www.youtube.com/watch?v=1kz6hNDlEEg" target="_blank">CrushCrushCrush</a></p>
+            <p><a href="https://www.youtube.com/watch?v=OH9A6tn_P6g" target="_blank">That's What You Get</a></p>
+        </div>
+
+         <div class="album">
+            <img src="photos/paramore Brand New Eyes Album.png" alt="Brand New Eyes Album">
+            <h3>Brand New Eyes (2009)</h3>
+            <p><a href="https://www.youtube.com/watch?v=JiF3pbvR5G0" target="_blank">The Only Exception</a></p>
+            <p><a href="https://www.youtube.com/watch?v=OH9A6tn_P6g" target="_blank">Ignorance</a></p>
+            <p><a href="https://www.youtube.com/watch?v=y-Mv0SsMei0" target="_blank">Brick by Boring Brick</a></p>
+        </div>
+
+         <div class="album">
+            <img src="photos/paramore After Laughter Album.png" alt="After Laughter Album">
+            <h3>After Laughter (2017)</h3>
+            <p><a href="https://www.youtube.com/watch?v=s48sEUuMfgM" target="_blank">Hard Times</a></p>
+            <p><a href="https://www.youtube.com/watch?v=OblL026SvD4" target="_blank">Ain’t It Fun</a></p>
+            <p><a href="https://www.youtube.com/watch?v=2K5Q4DK9OkY" target="_blank">Fake Happy</a></p>
+        </div>
+     </div>
+</section>
+
+<section class="genre" id="media">
+    <h2>Media & Gallery</h2>
+    <div class="card-container">
+         <div class="artist-card">
+            <img src="photos/Paramore Live.png" alt="Paramore Live">
+            <p>Electrifying live performance.</p>
+        </div>
+
+         <div class="artist-card">
+            <img src="photos/Paramore in Studio.png" alt="Paramore in Studio">
+            <p>Recording sessions for After Laughter.</p>
+        </div>
+
+         <div class="artist-card">
+            <img src="photos/Paramore Photoshoot.png" alt="Paramore Photoshoot">
+            <p>Official photoshoot for their comeback.</p>
+        </div>
+
+         <div class="artist-card">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/A63VwWz1ij0" title="Misery Business MV" frameborder="0" allowfullscreen></iframe>
+        </div>
+     </div>
+</section>
+
+<section class="genre" id="events">
+    <h2>Tours & Events</h2>
+    <div class="timeline-container">
+        <div class="timeline-item"><h4>2007</h4><p>Riot! Tour</p></div>
+        <div class="timeline-item"><h4>2013</h4><p>Self-Titled World Tour</p></div>
+        <div class="timeline-item"><h4>2017</h4><p>After Laughter Tour</p></div>
+        <div class="timeline-item"><h4>2023</h4><p>This Is Why Tour</p></div>
+        <div class="timeline-item"><h4>2024–2025</h4><p>Music Festival Appearances</p></div>
+    </div>
+</section>
+
+<section class="genre" id="contact">
+    <h2>Fan Submission</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Message / Artwork URL:</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<section class="genre" id="social">
+    <h2>Official Social Links</h2>
+    <ul>
+        <li><a href="https://www.paramore.net" target="_blank">Official Website</a></li>
+        <li><a href="https://www.instagram.com/paramore" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/paramore" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/paramore" target="_blank">Twitter</a></li>
+        <li><a href="https://www.youtube.com/@Paramore" target="_blank">YouTube</a></li>
+        <li><a href="https://open.spotify.com/artist/74XFHRwlV6OrjEM0A2NCMF" target="_blank">Spotify</a></li>
+    </ul>
+</section>
+
+<footer>
+    <p>© 2025 Music Universe. Paramore Fan Page.</p>
+</footer>
+
+<script>
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(button => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("active");
+            const panel = button.nextElementSibling;
+            if(panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    });
+</script>
+</body>
+</html>

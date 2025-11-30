@@ -1,0 +1,609 @@
+/* GLOBAL THEME */
+:root {
+    --bg: #0f0b16;
+    --bg2: #171223;
+    --accent: #7d4bff;
+    --accent-light: #a67fff;
+    --text: #eae5ff;
+    --text-dark: #cfc9e5;
+    --card: rgba(255,255,255,0.07);
+    --card-hover: rgba(255,255,255,0.12);
+    --shadow: rgba(0,0,0,.35);
+    --radius: 14px;
+    --transition: 0.3s ease;
+}
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: rgba(17,14,27,.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+/* FORCE ALL LINKS TO LOOK LIKE NORMAL TEXT */
+a {
+    color: inherit;            /* take color from parent element */
+    text-decoration: none;     /* remove underline */
+    cursor: default;           /* optional: remove pointer hand */
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: inherit;            /* no color change on hover/focus */
+    text-decoration: none;     /* no underline */
+    outline: none;
+}
+
+/* NAV LINKS - NORMAL TEXT STYLE */
+nav a {
+    text-decoration: none;  /* removes underline */
+    color: var(--text);     /* same as normal text */
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: default;        /* removes pointer cursor */
+    outline: none;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--text);     /* no color change on hover */
+    text-decoration: none;  /* ensure no underline on hover/focus */
+    outline: none;
+}
+
+nav a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--accent-light);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(145deg, #1b1528, #2a1e47);
+}
+
+.hero-img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+/* SECTION HEADERS */
+.genre {
+    padding: 40px 6% 30px;
+}
+/* Media & Gallery text under images */
+.card-container .artist-card p a {
+    color: var(--text);      /* make it normal text color */
+    text-decoration: none;   /* remove underline */
+    cursor: default;         /* optional: removes pointer cursor */
+}
+
+.card-container .artist-card p a:hover {
+    color: var(--text);      /* no change on hover */
+    text-decoration: none;   
+}
+/* Media & Gallery text under images */
+.card-container .artist-card p a {
+    color: var(--text);      /* make it normal text color */
+    text-decoration: none;   /* remove underline */
+    cursor: default;         /* optional: removes pointer cursor */
+}
+
+.card-container .artist-card p a:hover {
+    color: var(--text);      /* no change on hover */
+    text-decoration: none;   
+}
+/* Media & Gallery text under images */
+.card-container .artist-card p a {
+    color: var(--text);      /* make it normal text color */
+    text-decoration: none;   /* remove underline */
+    cursor: default;         /* optional: removes pointer cursor */
+}
+
+.card-container .artist-card p a:hover {
+    color: var(--text);      /* no change on hover */
+    text-decoration: none;   
+}
+
+
+.genre h2 {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 4px solid var(--accent);
+}
+
+/* CARD GRID */
+.card-container {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* ARTIST CARDS */
+.artist-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 3px 8px var(--shadow);
+    transition: var(--transition);
+}
+
+.artist-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-3px);
+}
+
+.artist-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+}
+
+.artist-card p a {
+    color: var(--accent-light);
+}
+
+/* --- ALBUM GRID FIX --- */
+.albums-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.album {
+    text-align: center;
+    background: var(--card);
+    padding: 15px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.album:hover {
+    background: var(--card-hover);
+    transform: translateY(-3px);
+}
+
+/* Smaller album images */
+.album img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.album-title {
+    cursor: pointer;
+    color: var(--accent-light);
+}
+
+.songs {
+    display: none;
+    margin-top: 10px;
+}
+
+.songs p {
+    margin: 5px 0;
+}
+
+/* MEDIA */
+iframe {
+    border-radius: var(--radius);
+}
+
+/* EVENTS LIST */
+#events ul {
+    list-style: inside;
+    padding-left: 0;
+}
+
+#events li {
+    margin: 8px 0;
+}
+
+/* FAN SUBMISSION */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+form label {
+    margin: 10px 0 4px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border-radius: var(--radius);
+    border: none;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+form button {
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+form button:hover {
+    background: var(--accent-light);
+}
+
+/* SOCIAL */
+#social ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#social ul li {
+    margin: 8px 0;
+}
+
+#social ul li a {
+    text-decoration: none;
+    color: var(--accent-light);
+}
+
+#social ul li a:hover {
+    text-decoration: underline;
+}
+/* HERO / GROUP PHOTOS */
+.hero-img {
+    width: 100%;       /* full width of container */
+    max-width: 800px;  /* optional: caps size */
+    height: 400px;     /* fixed height for uniformity */
+    object-fit: cover; /* crops/centers image without distortion */
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 28px 0;
+    margin-top: 40px;
+    background: #19142a;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 750px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .hero-img {
+        width: 95%;
+    }
+}
+
+/* OPEN SONG LIST */
+.album-title.active + .songs {
+    display: block;
+}
+
+/* MUSIC VIDEO GRID */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.video-card {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.video-date {
+    color: #9bff83;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.video-title {
+    margin: 0 0 12px;
+    font-size: 1.2rem;
+}
+
+.video-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    transition: 0.3s ease;
+}
+
+.video-card img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(255,255,255,0.3);
+}
+/* GLOBAL THEME */
+:root {
+    --bg: #0f0b16;
+    --bg2: #171223;
+    --accent: #7d4bff;
+    --accent-light: #a67fff;
+    --text: #eae5ff;
+    --text-dark: #cfc9e5;
+    --card: rgba(255,255,255,0.07);
+    --card-hover: rgba(255,255,255,0.12);
+    --shadow: rgba(0,0,0,.35);
+    --radius: 14px;
+    --transition: 0.3s ease;
+}
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: rgba(17,14,27,.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+nav a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--accent-light);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(145deg, #1b1528, #2a1e47);
+}
+
+.hero-img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: var(--radius);
+}
+
+/* SECTION HEADERS */
+.genre {
+    padding: 40px 6% 30px;
+}
+
+.genre h2 {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 4px solid var(--accent);
+}
+
+/* GRID SYSTEM */
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* CARDS */
+.card {
+    background: var(--card);
+    padding: 12px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    box-shadow: 0 3px 8px var(--shadow);
+}
+
+.card:hover {
+    background: var(--card-hover);
+    transform: translateY(-4px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: var(--radius);
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CARD TEXT */
+.card h3 {
+    color: var(--accent-light);
+    margin: 10px 0 6px;
+    font-size: 1.1rem;
+}
+
+.card p {
+    color: var(--text-dark);
+    margin: 0 0 8px;
+}
+
+/* ALBUMS */
+.album-grid img {
+    height: 260px;
+}
+
+/* MUSIC VIDEOS */
+.video-date {
+    color: #8affc7;
+    font-size: 0.8rem;
+    margin: 5px 0;
+}
+
+/* TIMELINE EVENTS */
+.timeline {
+    border-left: 3px solid var(--accent);
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: -28px;
+    top: 5px;
+}
+
+.timeline-item h4 {
+    margin: 0;
+    color: var(--accent-light);
+}
+
+/* RESPONSIVE */
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav a {
+        margin: 8px;
+    }
+    .hero-img {
+        width: 95%;
+    }
+}
+.timeline-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+@media(max-width: 800px) {
+    .timeline-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Accordion Button */
+.accordion {
+    background-color: var(--card);
+    color: var(--accent-light);
+    cursor: pointer;
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.accordion:hover {
+    background-color: var(--card-hover);
+}
+
+/* Panel for hidden content */
+.panel {
+    padding: 0 10px;
+    display: none;
+    overflow: hidden;
+    background-color: var(--card);
+    border-radius: var(--radius);
+    margin-top: 8px;
+}
+/* BAND MEMBERS PHOTOS */
+.artist-card img {
+    width: 200px;  /* Increase width */
+    height: 200px; /* Increase height */
+    object-fit: cover; /* Keeps image proportions without stretching */
+    border-radius: 10px; /* Optional: rounded corners */
+    transition: transform 0.3s ease; /* Optional: hover effect */
+}
+
+.artist-card img:hover {
+    transform: scale(1.05); /* Optional: slight zoom on hover */
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+    outline: none;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #7d4bff;
+    outline: none;
+}
+

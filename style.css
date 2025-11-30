@@ -1,0 +1,454 @@
+/* GLOBAL THEME */
+:root {
+    --bg: #0f0b16;
+    --bg2: #171223;
+    --accent: #7d4bff;
+    --accent-light: #a67fff;
+    --text: #eae5ff;
+    --text-dark: #cfc9e5;
+    --card: rgba(255,255,255,0.07);
+    --card-hover: rgba(255,255,255,0.12);
+    --shadow: rgba(0,0,0,.35);
+    --radius: 14px;
+    --transition: .25s ease;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: rgba(17,14,27,.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+/* ========== DYNAMIC HEADER & HERO ========== */
+
+/* Animated gradient background for header */
+@keyframes headerGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+    background: linear-gradient(120deg, #0f0b16, #171223, #2a1e47);
+    background-size: 200% 200%;
+    animation: headerGradient 10s ease infinite;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Floating logo effect */
+.logo img {
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px) rotate(3deg); }
+}
+
+/* Navigation links with sliding underline */
+nav a {
+    position: relative;
+    margin-left: 18px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--accent);
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-light);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero section with animated gradient overlay */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(17,14,27,0.6), rgba(17,14,27,0.6)), url('photos/hero-bg.jpg') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(125,75,255,0.2), transparent 70%);
+    animation: moveGradient 8s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moveGradient {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    100% { transform: rotate(360deg) translate(0, 0); }
+}
+
+/* Hero text appears with fade-in */
+.hero h2, .hero p {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero h2 {
+    animation-delay: 0.3s;
+    font-size: 2.8rem;
+}
+
+.hero p {
+    animation-delay: 0.6s;
+    font-size: 1.2rem;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+nav a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+nav a:hover {
+    color: var(--accent-light);
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(145deg, #1b1528, #2a1e47);
+}
+
+/* SECTION HEADERS */
+.genre {
+    padding: 40px 6% 30px;
+}
+
+.genre h2 {
+    margin-bottom: 18px;
+    padding-left: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+/* GRID */
+.card-container {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* CARD */
+.artist-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    text-align: center;
+    padding: 14px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.25);
+    transition: var(--transition);
+}
+
+/* Make whole card clickable & remove blue links */
+.artist-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.artist-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-3px);
+}
+
+/* IMAGE UNIFIED SIZE */
+.artist-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+/* TEXT */
+.artist-card h3 {
+    margin: 10px 0 4px;
+    font-size: 1.05rem;
+    color: var(--accent-light);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 28px 0;
+    margin-top: 40px;
+    background: #19142a;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 750px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .logo img {
+        width: 40px;
+    }
+}
+/* ====== BEATLES PAGE STYLING ====== */
+
+/* LARGE HERO IMAGE */
+.beatles-hero {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--accent);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* PAGE TITLE */
+.page-title {
+    text-align: center;
+    margin: 30px 0 10px;
+    font-size: 2.6rem;
+    color: var(--accent-light);
+}
+
+/* SUBHEADERS */
+.section-title {
+    margin: 45px 6% 25px;
+    padding-left: 8px;
+    border-left: 3px solid var(--accent);
+    font-size: 1.8rem;
+}
+
+/* ─── BAND MEMBER CARDS ─── */
+.member-card {
+    display: flex;
+    gap: 25px;
+    padding: 22px;
+    margin: 0 6% 25px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    transition: var(--transition);
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    background: var(--card-hover);
+}
+
+.member-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+.member-card h3 {
+    margin: 4px 0 6px;
+    font-size: 1.4rem;
+    color: var(--accent-light);
+}
+
+.member-card ul {
+    margin-top: 8px;
+    padding-left: 18px;
+    color: var(--text-dark);
+}
+
+/* MOBILE FIX FOR MEMBERS */
+@media (max-width: 850px) {
+    .member-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .member-card img {
+        margin: 0 auto;
+    }
+}
+
+/* ─── ALBUM DROPDOWN ─── */
+.album-box {
+    margin: 18px 6%;
+    background: var(--card);
+    padding: 14px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.album-box:hover {
+    background: var(--card-hover);
+}
+
+.album-box summary {
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.album-box summary img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.album-box ul {
+    margin-top: 10px;
+    padding-left: 18px;
+}
+
+.album-box p {
+    margin-top: 8px;
+    color: var(--text-dark);
+}
+
+/* CLICKABLE SONG LINKS */
+.album-box a {
+    color: var(--accent-light);
+    text-decoration: none;
+}
+.album-box a:hover {
+    text-decoration: underline;
+}
+
+/* ─── ICONIC VIDEO GRID ─── */
+.video-grid {
+    margin: 25px 6%;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+}
+
+.video-grid a {
+    background: var(--card);
+    padding: 14px;
+    text-align: center;
+    border-radius: var(--radius);
+    color: var(--accent-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.video-grid a:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+}
+
+/* ─── EVENTS / TIMELINE ─── */
+.timeline {
+    margin: 25px 6%;
+    background: var(--card);
+    padding: 22px;
+    border-radius: var(--radius);
+}
+
+.timeline li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* ─── FAN SUBMISSION ─── */
+.fan-box {
+    margin: 25px 6%;
+    background: var(--card);
+    padding: 22px;
+    border-radius: var(--radius);
+}
+
+.fan-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fan-box input,
+.fan-box textarea {
+    padding: 12px;
+    background: var(--bg2);
+    border: 1px solid #271c3e;
+    border-radius: var(--radius);
+    color: var(--text);
+}
+
+.fan-box button {
+    background: var(--accent);
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+}
+
+.fan-box button:hover {
+    background: var(--accent-light);
+}
