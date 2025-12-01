@@ -13,13 +13,25 @@
         <img src="photos/logo.jpg" alt="Site Logo">
         <h1>Music Universe</h1>
     </div>
-    <nav>
-        <a href="#rock">Rock</a>
-        <a href="#alt">Alternative</a>
-        <a href="#pop">Pop / Local</a>
-        <a href="#hiphop">Hip-Hop</a>
-        <a href="#contact">Contact</a>
+    
+   <nav>
+        <a href="home.html">Home</a>
+        <a href="genres.html">Genre</a>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact</a>
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Genres
+            </a>
+
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#rock">Rock</a></li>
+                <li><a class="dropdown-item" href="#alt">Alternative</a></li>
+                <li><a class="dropdown-item" href="#pop">Pop / Local</a></li>
+            </ul>
+        </div>
     </nav>
+
 </header>
 
 <section class="hero">
@@ -29,7 +41,6 @@
 
 <main>
 
-<!-- ROCK SECTION -->
 <section class="genre" id="rock">
     <h2>Rock Legends</h2>
     <div class="card-container">
